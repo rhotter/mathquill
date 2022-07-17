@@ -4055,9 +4055,11 @@ var TwoWordOpNames = { limsup: 1, liminf: 1, projlim: 1, injlim: 1 };
     BuiltInOpNames[mostOps[i]] = AutoOpNames[mostOps[i]] = 1;
   }
 
-  var builtInTrigs = "sin cos tan arcsin arccos arctan sinh cosh tanh sec csc cot coth".split( // why coth but not sech and csch, LaTeX?
-    " "
-  );
+  var builtInTrigs =
+    "sin cos tan arcsin arccos arctan sinh cosh tanh sec csc cot coth".split(
+      // why coth but not sech and csch, LaTeX?
+      " "
+    );
   for (var i = 0; i < builtInTrigs.length; i += 1) {
     BuiltInOpNames[builtInTrigs[i]] = 1;
   }
@@ -4088,9 +4090,9 @@ optionProcessors.autoOperatorNames = function (cmds) {
     maxLength = 0;
   for (var i = 0; i < list.length; i += 1) {
     var cmd = list[i];
-    if (cmd.length < 2) {
-      throw '"' + cmd + '" not minimum length of 2';
-    }
+    // if (cmd.length < 2) {
+    //   throw '"' + cmd + '" not minimum length of 2';
+    // }
     dict[cmd] = 1;
     maxLength = max(maxLength, cmd.length);
   }
@@ -4202,7 +4204,8 @@ LatexCmds.phiv = LatexCmds.varphi = bind(Variable, "\\varphi ", "&phi;"); //Else
 
 LatexCmds.epsilon = bind(Variable, "\\epsilon ", "&#1013;"); //W3C or Unicode?
 
-LatexCmds.epsiv = LatexCmds.varepsilon = bind( //Elsevier and 9573-13 //AMS and LaTeX
+LatexCmds.epsiv = LatexCmds.varepsilon = bind(
+  //Elsevier and 9573-13 //AMS and LaTeX
   Variable,
   "\\varepsilon ",
   "&epsilon;"
@@ -4228,7 +4231,8 @@ LatexCmds.gammad = //Elsevier
   LatexCmds.digamma = //LaTeX
     bind(Variable, "\\digamma ", "&#989;");
 
-LatexCmds.kappav = LatexCmds.varkappa = bind( //Elsevier //AMS and LaTeX
+LatexCmds.kappav = LatexCmds.varkappa = bind(
+  //Elsevier //AMS and LaTeX
   Variable,
   "\\varkappa ",
   "&#1008;"
